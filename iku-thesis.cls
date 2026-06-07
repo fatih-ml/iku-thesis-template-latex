@@ -104,7 +104,7 @@
 
 % --------------------------------------------------------------------------
 %  Line spacing (Guide section 3.5): 1.5 for body text.
-%  Lists, abstracts, captions, footnotes and the CV use single spacing.
+%  Lists, abstracts, captions and footnotes use single spacing.
 % --------------------------------------------------------------------------
 \onehalfspacing
 \captionsetup{font={small,singlespacing}}
@@ -136,8 +136,6 @@
 \newcommand{\iku@oztitle}{\bilingual{ÖZ}{ÖZ}}
 \newcommand{\iku@abstracttitle}{ABSTRACT}
 \newcommand{\iku@keywords}{\bilingual{Anahtar Kelimeler}{Keywords}}
-\newcommand{\iku@sciencecodelbl}{\bilingual{Bilim Kodu}{Science Code}}
-\newcommand{\iku@cvtitle}{\bilingual{ÖZGEÇMİŞ}{RÉSUMÉ}}
 \newcommand{\iku@biblabel}{\bilingual{KAYNAKÇA}{BIBLIOGRAPHY}}
 \newcommand{\iku@tablename}{\bilingual{Tablo}{Table}}
 \newcommand{\iku@figurename}{\bilingual{Şekil}{Figure}}
@@ -184,7 +182,6 @@
 \newcommand{\@coverdate}{}  \newcommand{\coverdate}[1]{\renewcommand{\@coverdate}{#1}}
 \newcommand{\@keywordsTR}{} \newcommand{\keywordsTR}[1]{\renewcommand{\@keywordsTR}{#1}}
 \newcommand{\@keywordsEN}{} \newcommand{\keywordsEN}[1]{\renewcommand{\@keywordsEN}{#1}}
-\newcommand{\@sciencecode}{} \newcommand{\sciencecode}[1]{\renewcommand{\@sciencecode}{#1}}
 \newcommand{\@city}{}       \newcommand{\city}[1]{\renewcommand{\@city}{#1}}
 \newcommand{\@thesisyear}{} \newcommand{\thesisyear}[1]{\renewcommand{\@thesisyear}{#1}}
 
@@ -388,7 +385,7 @@
 
 % --------------------------------------------------------------------------
 %  Abstracts (Guide section 4.2.4). Both are always printed. Each shows a
-%  metadata header, the thesis title, the body, then keywords + science code.
+%  metadata header, the thesis title, the body, then the keywords.
 % --------------------------------------------------------------------------
 \newcommand{\iku@abstractheader}[3]{%
   % #1 institute, #2 department, #3 program
@@ -417,7 +414,6 @@
   #1\par
   \vspace{1\baselineskip}%
   \noindent\textbf{Anahtar Kelimeler:} \@keywordsTR\par
-  \noindent\textbf{Bilim Kodu:} \@sciencecode\par
   \end{otherlanguage}%
   \endgroup
 }
@@ -434,7 +430,6 @@
   #1\par
   \vspace{1\baselineskip}%
   \noindent\textbf{Keywords:} \@keywordsEN\par
-  \noindent\textbf{Science Code:} \@sciencecode\par
   \end{otherlanguage}%
   \endgroup
 }
@@ -473,14 +468,6 @@
 \newcommand{\makebibliography}{%
   \clearpage
   \printbibliography[heading=bibintoc,title={\iku@biblabel}]}
-
-% --------------------------------------------------------------------------
-%  CV / Resume (doctoral & proficiency-in-art theses). #1 = body text.
-% --------------------------------------------------------------------------
-\newcommand{\makecv}[1]{%
-  \clearpage
-  \iku@listhead{\iku@cvtitle}%
-  \singlespacing #1 \onehalfspacing}
 
 % Convenience: include a table float stored under tables/.
 \newcommand{\inputtable}[1]{\input{tables/#1}}

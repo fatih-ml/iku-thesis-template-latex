@@ -8,7 +8,7 @@
 %  by changing the class option below to `turkish` or `english`.
 %
 %  DEGREE:  choose one of `ms` (master's, default), `phd` (doctorate) or
-%  `arts` (proficiency-in-art). Doctorate/arts also print the CV section.
+%  `arts` (proficiency-in-art); this sets the thesis-type wording on the cover.
 %
 %  Example for an English doctoral thesis:
 %     \documentclass[english,phd]{iku-thesis}
@@ -70,9 +70,5 @@
 % Appendices: one \input per file under appendices/.
 \appendix
 \input{appendices/A-example}
-
-% CV / Resume -- required for doctoral and proficiency-in-art theses.
-% (Harmless to keep for a master's thesis; remove if you prefer.)
-\makecv{\input{frontmatter/cv}}
 
 \end{document}

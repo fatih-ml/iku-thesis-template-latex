@@ -112,7 +112,7 @@ Edit the very first line of `main.tex`:
   fixed heading/label and babel's main language. Both abstracts (ÖZ and
   ABSTRACT) are always printed, as the guide requires.
 - **Degree:** `ms` (master's, default), `phd` (doctorate), or `arts`
-  (proficiency-in-art). `phd`/`arts` use the doctoral wording and the CV section.
+  (proficiency-in-art). This sets the thesis-type wording on the cover.
 
 For an **English** thesis, also uncomment `\maketurkishinnercover` in `main.tex`
 — a Turkish inner cover is added for foreign-language theses.
@@ -121,12 +121,11 @@ For an **English** thesis, also uncomment `\maketurkishinnercover` in `main.tex`
 
 Everything that identifies your thesis lives in **`metadata.tex`**: title (TR and
 EN), author, student number, institute/department/programme (TR and EN), advisor
-and co-advisor, jury members, dates, keywords, and science code. Edit that file
-first.
+and co-advisor, jury members, dates, and keywords. Edit that file first.
 
 Prose front matter lives in **`frontmatter/`**:
 `preface.tex`, `abstract-tr.tex`, `abstract-en.tex`, `abbreviations.tex`,
-`symbols.tex`, `cv.tex`, `declaration.tex`.
+`symbols.tex`, `declaration.tex`.
 
 ### Writing bilingual text
 
@@ -147,7 +146,7 @@ sections/           One .tex per section (numeric prefixes set the order)
 tables/             One .tex per table (each a self-contained float)
 figures/            Figures as PDF (sources kept alongside as .tex)
 appendices/         One .tex per appendix
-frontmatter/        Preface, abstracts, abbreviations, symbols, CV, declaration
+frontmatter/        Preface, abstracts, abbreviations, symbols, declaration
 ```
 
 ### Adding content
@@ -242,8 +241,7 @@ Add the corresponding entries to `references.bib`.
   cover layout.)
 - **KVKK / personal data.** Do not put personal data in the thesis — no birth
   date, e-mail, phone number, or embedded signature images. The signature lines
-  on the inner cover are left blank and signed physically after printing; keep
-  the CV (`frontmatter/cv.tex`) free of contact details.
+  on the inner cover are left blank and signed physically after printing.
 - The official guide (2004) predates the now-common **academic-integrity
   declaration**; it is included as a standard page. Comment out `\makedeclaration`
   in `main.tex` if your institute does not require it.
