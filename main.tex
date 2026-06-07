@@ -1,0 +1,78 @@
+% ===========================================================================
+%  Istanbul Kultur University (IKU) -- Graduate Thesis Template
+% ===========================================================================
+%  Engine : pdfLaTeX            Bibliography : biber
+%  Build  : latexmk -pdf main.tex   (or pdflatex -> biber -> pdflatex x2)
+%
+%  LANGUAGE: switch the whole document between Turkish (default) and English
+%  by changing the class option below to `turkish` or `english`.
+%
+%  DEGREE:  choose one of `ms` (master's, default), `phd` (doctorate) or
+%  `arts` (proficiency-in-art). Doctorate/arts also print the CV section.
+%
+%  Example for an English doctoral thesis:
+%     \documentclass[english,phd]{iku-thesis}
+% ===========================================================================
+\documentclass[turkish,ms]{iku-thesis}
+
+% Your thesis information (title, author, advisor, jury, dates, keywords...).
+\input{metadata}
+
+% Bibliography database(s).
+\addbibresource{references.bib}
+
+\begin{document}
+
+% ----------------------- FRONT MATTER --------------------------------------
+% Covers are unnumbered. The preface is page "i" (not printed); from the Table
+% of Contents onward, roman numerals appear at the bottom-center of the page.
+\makecover        % Dış kapak (outer cover)
+\makeinnercover   % İç kapak (inner cover -- same content + jury signature lines)
+% For an ENGLISH thesis, also add a Turkish inner cover (uncomment in english mode):
+% \maketurkishinnercover
+
+\frontmatterstyle  % switch to roman numerals (front matter)
+
+% Declaration of academic integrity (see README: a post-2004 addition that most
+% institutes now require; comment out if your institute does not).
+\makedeclaration{\input{frontmatter/declaration}}
+
+% Preface / Onsoz.
+\makepreface{\input{frontmatter/preface}}
+
+% Table of contents and the lists. Order follows the guide (section 3.1).
+\maketableofcontents
+\makeabbreviations{\input{frontmatter/abbreviations}}
+\makelistoftables
+\makelistoffigures
+\makelistofsymbols{\input{frontmatter/symbols}}
+
+% Both abstracts are mandatory: Turkish OZ first, then the foreign-language one.
+\makeoz{\input{frontmatter/abstract-tr}}
+\makeabstract{\input{frontmatter/abstract-en}}
+
+% ----------------------- MAIN MATTER ---------------------------------------
+\mainmatterstyle  % switch to arabic numerals (body)
+
+% Add one \input per section. A section can be a single file (sections 1, 2, 4
+% below) OR a folder whose "index" file pulls in several part files (section 3,
+% sections/03-method/). Both appear identically in the body and the Table of
+% Contents -- the TOC is built from the \chapter/\section commands, not the file
+% layout. The numeric prefixes just keep the files ordered for humans.
+\input{sections/01-introduction}
+\input{sections/02-literature}
+\input{sections/03-method/03-method}
+\input{sections/99-conclusion}
+
+% ----------------------- BACK MATTER ---------------------------------------
+\makebibliography
+
+% Appendices: one \input per file under appendices/.
+\appendix
+\input{appendices/A-example}
+
+% CV / Resume -- required for doctoral and proficiency-in-art theses.
+% (Harmless to keep for a master's thesis; remove if you prefer.)
+\makecv{\input{frontmatter/cv}}
+
+\end{document}

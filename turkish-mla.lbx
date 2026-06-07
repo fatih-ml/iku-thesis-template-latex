@@ -1,0 +1,36 @@
+% turkish-mla.lbx
+% Turkish localization for the biblatex MLA style, following the IKU Thesis
+% Writing Guide (section 7, "Acronyms Used in the Citation of Bibliography
+% Items"). It inherits Turkish babel extras and overrides the strings that MLA
+% uses so that Turkish-language theses render citations with the expected
+% abbreviations (Kaynakca, cev., s./ss., Ed./Haz., basim, ...).
+%
+% Activated by the class via \DeclareLanguageMapping{turkish}{turkish-mla}.
+
+\ProvidesFile{turkish-mla.lbx}[2026/06/07 v1.0 Turkish MLA localization for IKU theses]
+
+\InheritBibliographyExtras{turkish}
+
+\DeclareBibliographyStrings{%
+  inherit          = {turkish},
+  bibliography     = {{Kaynakça}{Kaynakça}},
+  references       = {{Kaynakça}{Kaynakça}},
+  page             = {{s\adddot}{s\adddot}},
+  pages            = {{ss\adddot}{ss\adddot}},
+  volume           = {{cilt}{c\adddot}},
+  volumes          = {{cilt}{c\adddot}},
+  edition          = {{basım}{basım}},
+  bytranslator     = {{çeviren}{çev\adddot}},
+  byeditor         = {{hazırlayan}{haz\adddot}},
+  editor           = {{editör}{Ed\adddot}},
+  editors          = {{editörler}{Ed\adddot}},
+  number           = {{sayı}{sayı}},
+  numbers          = {{sayılar}{sayı}},
+  urlseen          = {{erişim}{erişim}},
+  in               = {{içinde}{içinde}},
+  andothers        = {{ve diğerleri}{v\adddot d\adddot}},
+  phdthesis        = {{Doktora tezi}{Doktora tezi}},
+  mathesis         = {{Yüksek lisans tezi}{Yüksek lisans tezi}},
+}
+
+\endinput

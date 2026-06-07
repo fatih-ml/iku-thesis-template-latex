@@ -1,0 +1,42 @@
+{
+  // --- Reading: soft-wrap long lines so you never scroll right ---
+  // Display-only: inserts no line breaks and does NOT change the compiled PDF.
+  // Works in the normal editor AND in the diff/compare view, so a paragraph
+  // written as one long line still shows wrapped (with the changed words
+  // highlighted) when you review a Git diff.
+  "editor.wordWrap": "on",
+  "editor.wrappingIndent": "same",
+  "diffEditor.wordWrap": "on",
+  "[latex]": {
+    "editor.wordWrap": "on",
+    "editor.wrappingIndent": "same"
+  },
+  "[bibtex]": {
+    "editor.wordWrap": "on"
+  },
+
+  // --- Build on save (LaTeX Workshop) ---
+  // Uses pdflatex + biber directly, so it works on a basic TeX install WITHOUT
+  // latexmk. (Overleaf ignores this and uses its own latexmk.)
+  "latex-workshop.latex.autoBuild.run": "onSave",
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "pdflatex > biber > pdflatex x2",
+      "tools": ["pdflatex", "biber", "pdflatex", "pdflatex"]
+    }
+  ],
+  "latex-workshop.latex.tools": [
+    {
+      "name": "pdflatex",
+      "command": "pdflatex",
+      "args": ["-synctex=1", "-interaction=nonstopmode", "-file-line-error", "%DOC%"],
+      "env": {}
+    },
+    {
+      "name": "biber",
+      "command": "biber",
+      "args": ["%DOCFILE%"],
+      "env": {}
+    }
+  ]
+}

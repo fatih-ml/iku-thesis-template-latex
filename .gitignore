@@ -1,0 +1,38 @@
+tmp*
+.venv
+.env
+venv
+env
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+*.log
+*.sqlite3
+.DS_Store
+.idea
+.vscode/*
+!.vscode/settings.json
+*.egg-info
+
+# Project scratch (not part of the template)
+spec.md
+
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.lot
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.xdv
+missfont.log
+
+# Keep the example figure PDF (it is part of the template):
+!figures/*.pdf

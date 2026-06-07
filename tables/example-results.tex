@@ -1,0 +1,15 @@
+% A self-contained table float. Caption goes ABOVE the table (per the guide).
+% Include it from a section with: \inputtable{example-results}
+\begin{table}[htbp]
+  \centering
+  \caption{\bilingual{Örnek sonuçlar tablosu.}{Example results table.}}
+  \label{tab:example}
+  \begin{tabular}{lrr}
+    \toprule
+    \bilingual{Yöntem}{Method} & \bilingual{Doğruluk}{Accuracy} & \bilingual{Süre (s)}{Time (s)} \\
+    \midrule
+    \bilingual{Temel}{Baseline} & 0.81 & 12.4 \\
+    \bilingual{Önerilen}{Proposed} & 0.93 & 9.7 \\
+    \bottomrule
+  \end{tabular}
+\end{table}

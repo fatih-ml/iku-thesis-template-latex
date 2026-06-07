@@ -1,0 +1,18 @@
+% Section 3 is split across several files in this folder to demonstrate that a
+% single section can span multiple .tex files. This "index" file holds the
+% chapter heading and \inputs the parts. NOTE: \input paths are relative to
+% main.tex (the project root), so each part is given its full path.
+\chapter{\bilingual{YÖNTEM}{METHOD}}
+\label{ch:method}
+
+\bilingual{%
+  Bu bölüm, şablonun nasıl yapılandırıldığını açıklar ve denklem, tablo ve
+  şekil kullanımını örnekler.
+  Bu bölüm, birden fazla \texttt{.tex} dosyasına bölünmüştür.}{%
+  This chapter explains how the template is structured and demonstrates the use
+  of equations, tables, and figures.
+  It is split across several \texttt{.tex} files.}
+
+\input{sections/03-method/01-equations}
+\input{sections/03-method/02-tables}
+\input{sections/03-method/03-figures}
