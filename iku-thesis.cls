@@ -82,6 +82,11 @@
 \RequirePackage{calc}
 \RequirePackage[hidelinks]{hyperref}
 
+% Turkish babel makes "=" an active shorthand, which breaks key=value options in
+% packages such as enumitem (e.g. \begin{enumerate}[leftmargin=1.5em]). Turn the
+% shorthand off so those options parse normally.
+\ifiku@turkish \AtBeginDocument{\shorthandoff{=}}\fi
+
 % --------------------------------------------------------------------------
 %  Bibliography: MLA via biblatex + biber
 % --------------------------------------------------------------------------
